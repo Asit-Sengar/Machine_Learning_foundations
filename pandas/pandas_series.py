@@ -25,3 +25,8 @@ marks_series = pd.Series(marks_dict, dtype="int16")
 print(marks_series)
 # .isunique function tells if the series have all unique elements
 print(pd.Series([1, 2, 3, 4, 5, 5]).is_unique)
+
+
+df = pd.read_csv("../datasets/subs.csv")
+print(df)
+print(type(df))
