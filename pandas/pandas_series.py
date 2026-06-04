@@ -29,4 +29,9 @@ print(pd.Series([1, 2, 3, 4, 5, 5]).is_unique)
 
 df = pd.read_csv("../datasets/subs.csv")
 print(df)
-print(type(df))
+print(type(df))  # we can see the type of data also
+
+kohli_df = pd.read_csv("C:\rough_folder\Machine_Learning_foundations\datasets\kohli_ipl.csv",
+                       index="match_no", squeeze=True)
+print(kohli_df)
+print(type(kohli_df))
