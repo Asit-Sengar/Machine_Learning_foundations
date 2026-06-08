@@ -14,5 +14,10 @@ print(df)
 
 # now i want to import some files
 file = pd.read_csv(
-    r"C:\rough_folder\Machine_Learning_foundations\datasets\subs.csv")
+    r"C:\rough_folder\Machine_Learning_foundations\datasets\melb_data.csv")
 print(file)
+# to print complete file use to_string method
+# print(file.to_string())#otherwise dont use it
+
+# selection by coloumn
+print(file["Price"])
