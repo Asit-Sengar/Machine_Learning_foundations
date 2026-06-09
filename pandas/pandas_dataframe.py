@@ -14,10 +14,16 @@ print(df)
 
 # now i want to import some files
 file = pd.read_csv(
-    r"C:\rough_folder\Machine_Learning_foundations\datasets\melb_data.csv")
+    r"C:\rough_folder\Machine_Learning_foundations\datasets\melb_data.csv", index_col="Price")
 print(file)
 # to print complete file use to_string method
 # print(file.to_string())#otherwise dont use it
 
 # selection by coloumn
-print(file["Price"])
+
+
+# now we will select using rows
+# print(file.loc[0])  # this prints the first row
+# i can assign and index column to which ever column i want
+print(file.columns)  # this is for printig the available columns
+print(file.loc["Method"])
