@@ -23,7 +23,7 @@ print(file)
 
 
 # now we will select using rows
-# print(file.loc[0])  # this prints the first row
+print(file.loc["0"])  # this prints the first row
 # i can assign and index column to which ever column i want
 print(file.columns)  # this is for printig the available columns
-print(file.loc["Method"])
+print(file.iloc[0:11])  # this prints the first 10 rows
