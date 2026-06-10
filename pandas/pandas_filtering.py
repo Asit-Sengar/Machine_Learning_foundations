@@ -2,7 +2,6 @@ import pandas as pd  # importing
 
 # Note: This script filters rows that match specific conditional criteria.
 
-# Fixed: Used relative path and renamed 'file' to descriptive 'df_kohli'
 file_path = "../datasets/kohli_ipl.csv"
 df_kohli = pd.read_csv(file_path)
 

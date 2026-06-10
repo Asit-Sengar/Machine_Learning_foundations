@@ -22,12 +22,12 @@ print(f"DataFrame after adding column and row:\n{df}\n")
 
 
 # --- Importing and Inspecting External Datasets ---
-# Fixed: Used a relative path so the script runs on any machine, and renamed variable to 'df_melb'
-file_path = "../datasets/melb_data.csv"
+file_path = "../datasets/melb_data.csv"  # defining the file path
 df_melb = pd.read_csv(file_path, index_col="Price")
 print(f"Melbourne Data Preview:\n{df_melb.head()}\n")
 
-# Column Inspection
+# printing all columns
+
 print(f"Available columns:\n{df_melb.columns}\n")
 
 # Row Selection: Safely using .iloc for position-based indexing (instead of .loc["0"])
