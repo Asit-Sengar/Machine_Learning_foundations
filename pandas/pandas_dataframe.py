@@ -1,29 +1,35 @@
 import pandas as pd
 
-data = {"names": ["asit", "sakshi", "khushi"],
-        "age": [23, 23, 56]}
-df = pd.DataFrame(data, index=["employe1", "employe2", "employe3"])
-print("the data frame is: ", df)
-# to print something at specific location
-print(df.loc["employe2"])
-# for adding a new coloumn
-df["job"] = ["software engineer", "housewife", "housewife"]
-# for adding a new row
-new_row = pd.DataFrame([])
-print(df)
+# --- Creating a DataFrame from Scratch ---
+data = {
+    "names": ["asit", "sakshi", "khushi"],
+    "age": [23, 23, 56]
+}
 
-# now i want to import some files
-file = pd.read_csv(
-    r"C:\rough_folder\Machine_Learning_foundations\datasets\melb_data.csv", index_col="Price")
-print(file)
-# to print complete file use to_string method
-# print(file.to_string())#otherwise dont use it
+# Fixed typo: changed index strings from 'employe' to 'employee'
+df = pd.DataFrame(data, index=["employee1", "employee2", "employee3"])
+print(f"Initial DataFrame:\n{df}\n")
 
-# selection by coloumn
+# Accessing a specific row location using .loc
+print(f"Data for employee2:\n{df.loc['employee2']}\n")
+
+# Adding a new column cleanly
+df["job"] = ["software engineer", "student", "student"]
+
+# Fixed logic: Properly appending a new row using .loc instead of an empty DataFrame
+df.loc["employee4"] = ["rahul", 28, "data scientist"]
+print(f"DataFrame after adding column and row:\n{df}\n")
 
 
-# now we will select using rows
-print(file.loc["0"])  # this prints the first row
-# i can assign and index column to which ever column i want
-print(file.columns)  # this is for printig the available columns
-print(file.iloc[0:11])  # this prints the first 10 rows
+# --- Importing and Inspecting External Datasets ---
+# Fixed: Used a relative path so the script runs on any machine, and renamed variable to 'df_melb'
+file_path = "../datasets/melb_data.csv"
+df_melb = pd.read_csv(file_path, index_col="Price")
+print(f"Melbourne Data Preview:\n{df_melb.head()}\n")
+
+# Column Inspection
+print(f"Available columns:\n{df_melb.columns}\n")
+
+# Row Selection: Safely using .iloc for position-based indexing (instead of .loc["0"])
+print(f"First row of Melbourne data via position:\n{df_melb.iloc[0]}\n")
+print(f"First 10 rows of Melbourne data:\n{df_melb.head(10)}")
