@@ -23,6 +23,12 @@ I am using this repo to learn step by step: understand the data, explore pattern
 
 ## Tools Learned
 
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Jupyter Notebooks
+
 ## Status
 
 Early-stage learning repository. More notebooks, datasets, scripts, and notes will be added as I continue growing in Machine Learning.
