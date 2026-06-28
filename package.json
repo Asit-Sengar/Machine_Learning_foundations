@@ -1,0 +1,100 @@
+{
+  "name": "vscode-notebook-autodoc",
+  "displayName": "Notebook AutoDoc",
+  "description": "Automatically generate and maintain markdown documentation for Jupyter notebook code cells using configurable LLM providers.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "publisher": "your-name",
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:notebookAutodoc.generateForCell",
+    "onCommand:notebookAutodoc.generateForNotebook",
+    "onCommand:notebookAutodoc.refreshAll",
+    "onCommand:notebookAutodoc.toggleAuto",
+    "onCommand:notebookAutodoc.deleteGenerated"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "test": "mocha -r ts-node/register test/**/*.test.ts --timeout 10000",
+    "package": "vsce package || true"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.0.0",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "@types/chai": "^4.3.0"
+  },
+  "dependencies": {
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "notebookAutodoc.generateForCell",
+        "title": "AutoDoc: Generate Documentation for Current Cell"
+      },
+      {
+        "command": "notebookAutodoc.generateForNotebook",
+        "title": "AutoDoc: Generate Documentation for Notebook"
+      },
+      {
+        "command": "notebookAutodoc.refreshAll",
+        "title": "AutoDoc: Refresh All Generated Markdown"
+      },
+      {
+        "command": "notebookAutodoc.toggleAuto",
+        "title": "AutoDoc: Toggle Auto Generation"
+      },
+      {
+        "command": "notebookAutodoc.deleteGenerated",
+        "title": "AutoDoc: Delete Generated Markdown"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Notebook AutoDoc",
+      "properties": {
+        "notebookAutodoc.provider": {
+          "type": "string",
+          "enum": ["local","openai","anthropic","gemini","ollama"],
+          "default": "local",
+          "description": "Select the AI provider to use for generating documentation."
+        },
+        "notebookAutodoc.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for the selected provider (if required)."
+        },
+        "notebookAutodoc.model": {
+          "type": "string",
+          "default": "default",
+          "description": "Model name to use for the provider."
+        },
+        "notebookAutodoc.debounceMs": {
+          "type": "number",
+          "default": 2500,
+          "description": "Debounce delay in milliseconds after user stops typing before generating documentation."
+        },
+        "notebookAutodoc.maxTokens": {
+          "type": "number",
+          "default": 512
+        },
+        "notebookAutodoc.temperature": {
+          "type": "number",
+          "default": 0.2
+        },
+        "notebookAutodoc.autoUpdate": {
+          "type": "boolean",
+          "default": true,
+          "description": "If enabled, documentation will be generated automatically as you edit code cells."
+        }
+      }
+    }
+  }
+}
