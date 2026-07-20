@@ -1,8 +1,8 @@
 # Machine Learning Foundations
 
-<div align="center">
-	<img src="https://via.placeholder.com/1000x260.png?text=Machine+Learning+Foundations+%E2%80%A2+Practical+Notebooks+%26+Examples" alt="Machine Learning Foundations banner" style="max-width:900px; width:100%; height:auto;">
-</div>
+<p align="center">
+  <img src="assets/banner.svg" alt="Machine Learning Foundations banner" style="max-width:900px; width:100%; height:auto;" />
+</p>
 
 A curated collection of notebooks, datasets, and reference code that documents a practical, project-driven learning path through foundational machine learning concepts.
 
