@@ -1,34 +1,104 @@
 # Machine Learning Foundations
 
-> My learning journey through the core ideas, tools, and code behind Machine Learning.
+A curated collection of notebooks, datasets, and reference code that documents a practical, project-driven learning path through foundational machine learning concepts.
 
-## Overview
+## Table of Contents
 
-This repository tracks my progress as I build a strong foundation in Machine Learning. It is a growing collection of practice code, concept notes, experiments, and examples that connect ML theory with hands-on implementation.
+- [Project](#project)
+- [Highlights](#highlights)
+- [Repository Structure](#repository-structure)
+- [Datasets](#datasets)
+- [Getting Started](#getting-started)
+- [Notebooks & Examples](#notebooks--examples)
+- [Contributing](#contributing)
+- [License & Contact](#license--contact)
 
-## What I Am Learning
+## Project
 
-- Python for ML
-- NumPy and Pandas
-- Data cleaning and preprocessing
-- Data visualization
-- Supervised and unsupervised learning
-- Model training and evaluation
-- Overfitting, underfitting, and accuracy
-- Scikit-learn workflows
+This repository is a learning-focused workspace for building intuition and practical skills in machine learning: data exploration, preprocessing, visualization, model development, evaluation, and experimentation. It emphasizes readable notebooks, small reproducible scripts, and annotated examples.
 
-## Journey
+## Highlights
 
-I am using this repo to learn step by step: understand the data, explore patterns, train models, evaluate results, and improve with practice.
+- Hands-on notebooks that demonstrate preprocessing, feature engineering, and classic ML pipelines.
+- Small utility scripts for notebook maintenance and data handling.
+- A datasets folder with curated CSVs for common classification and regression exercises.
 
-## Tools Learned
+## Repository Structure
 
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Jupyter Notebooks
+- `datasets/` — CSV datasets used by notebooks and examples
+- `notebooks/` — Jupyter notebooks and tutorial material
+- `Gradient_Descent/` — focused experiments (gradient descent implementations)
+- `numpy/`, `pandas/`, `matplotlib/` — example scripts and focused demos
+- `scripts/` — helper scripts (e.g., `fix_notebooks.py`)
+- `src/` — TypeScript helper code for tooling (extension and provider code)
 
-## Status
+## Datasets
 
-Early-stage learning repository. More notebooks, datasets, scripts, and notes will be added as I continue growing in Machine Learning.
+Notable files in `datasets/` include:
+
+- `train.csv`, `data.csv`, `wine_data.csv`, `student_data.csv`, `cars.csv` — small tabular datasets for exercises
+
+If you add or remove datasets, update the relevant notebook paths accordingly.
+
+## Getting Started
+
+Prerequisites:
+
+- Python 3.8+ (recommended)
+- pip
+- Optional: `venv` or virtual environment manager
+
+Quick start (Windows PowerShell):
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install jupyterlab numpy pandas scikit-learn matplotlib seaborn
+```
+
+On macOS / Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install jupyterlab numpy pandas scikit-learn matplotlib seaborn
+```
+
+Run the notebooks:
+
+```bash
+jupyter lab
+# or
+jupyter notebook
+```
+
+Tip: Use the `notebooks/100_days_ml` folder as a guided progression if you prefer a structured learning path.
+
+## Notebooks & Examples
+
+- `notebooks/` contains topic-focused notebooks for preprocessing, encoding, normalization, and model examples.
+- `Gradient_Descent/gradient_descent_from_scratch.ipynb` demonstrates optimization basics.
+
+When adding notebooks, keep them self-contained: include a short description at the top and the minimal dependencies required to run the examples.
+
+## Contributing
+
+- Keep changes small and focused; prefer one logical change per commit.
+- Add tests or a short runnable example for new utilities.
+- Update `README.md` and notebook metadata when moving or renaming files.
+
+If you'd like help turning this repo into a tutorial site (mkdocs, GitHub Pages) or adding CI for notebook execution, open an issue or send a PR.
+
+## License & Contact
+
+This repository is intended for personal learning and sharing. If you'd like to reuse or adapt material, please include attribution.
+
+If you'd like me to add a license file (MIT/Apache/BSD), or badges and CI, tell me which one you prefer.
+
+Questions or suggestions: open an issue or contact the repository owner.
+
+---
+
+Maintained with a focus on clarity, reproducibility, and incremental learning.
