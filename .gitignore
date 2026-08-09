@@ -5,3 +5,5 @@ __pycache__/
 .ipynb_checkpoints/
 out/
 node_modules/
+.codex_error_watcher.log
+error_watcher.py
